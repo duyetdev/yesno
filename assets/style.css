@@ -1,0 +1,120 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222222;
+    color: #323232;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.4;
+    height: 100%;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #262626;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+#app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+    -webkit-transition: left 0.1s ease-out;
+    -moz-transition: left 0.1s ease-out;
+    transition: left 0.1s ease-out;
+    display: block;
+}
+
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#answer {
+    margin: 0;
+    line-height: 1;
+    visibility: hidden;
+    color: white;
+    text-shadow: 0 0 20px rgba(0,0,0,0.25),0 2px 2px rgba(0,0,0,0.5);
+    font-size: 80px;
+    opacity: 1;
+}
+
+#app.show #answer {
+    visibility: visible;
+    -webkit-animation: showAnswer 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+    -moz-animation: showAnswer 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+    animation: showAnswer 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100px;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+
+#spinner>div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: white;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    -moz-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#app.show #spinner {
+    opacity: 0;
+}
+
+#spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    -moz-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+#spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    -moz-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
